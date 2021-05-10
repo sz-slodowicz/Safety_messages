@@ -1,0 +1,144 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{safetymessages}[2021/03/23 v 1.0 package providing safety messages macro]
+\RequirePackage{babel}
+\RequirePackage{translations}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{fontenc}
+
+%Macro for the warning symbol in safety message
+\newcommand{\tr}{\tikz[baseline=1.5ex] \node[fill=yellow, shape=regular polygon, regular polygon sides=3, inner sep=0pt, draw, thick] {\textbf{!}};}
+%Macro for the the warning symbol in inline safety message
+
+\newcommand{\trin}{\tikz[baseline=-1ex] \node[fill=yellow, shape=regular polygon, regular polygon sides=3, inner sep=0pt, draw, thick] {\textbf{!}};}
+
+%Macro for signal words
+\newcommand{\danger}{\GetTranslation{danger}}
+\newcommand{\warning}{\GetTranslation{warning}}
+\newcommand{\caution}{\GetTranslation{caution}}
+\newcommand{\notice}{\GetTranslation{notice}}
+
+%Translations for danger
+\DeclareTranslationFallback{danger}{danger}
+\selectlanguage{German} \DeclareTranslation{German}{danger}{Gefahr}
+\selectlanguage{English} \DeclareTranslation{English}{danger}{danger}
+\selectlanguage{French} \DeclareTranslation{French}{danger}{danger}
+\selectlanguage{Italian} \DeclareTranslation{Italian}{danger}{pericolo}
+\selectlanguage{Spanish} \DeclareTranslation{Spanish}{danger}{peligro}
+\selectlanguage{Danish} \DeclareTranslation{Danish}{danger}{fare}
+\selectlanguage{Finnish} \DeclareTranslation{Finnish}{danger}{vaara}
+\selectlanguage{Greek} \DeclareTranslation{Greek}{danger}{Κίνδυνος}
+\selectlanguage{Dutch} \DeclareTranslation{Dutch}{danger}{gevaar}
+\selectlanguage{Portuguese} \DeclareTranslation{Portuguese}{danger}{perigo}
+\selectlanguage{Swedish} \DeclareTranslation{Swedish}{danger}{fara}
+\selectlanguage{Polish} \DeclareTranslation{Polish}{danger}{niebezpiecze\'nstwo}
+\selectlanguage{Norsk} \DeclareTranslation{Norsk}{danger}{fare}
+\selectlanguage{Slovak} \DeclareTranslation{Slovak}{danger}{nebezpe\v{c}enstvo}
+\selectlanguage{Slovenian} \DeclareTranslation{Slovenian}{danger}{nevarnost}
+\selectlanguage{Hungarian} \DeclareTranslation{Hungarian}{danger}{vesz\'{e}ly}
+\selectlanguage{Czech} \DeclareTranslation{Czech}{danger}{nebepe\v{c}i}
+\selectlanguage{Estonian} \DeclareTranslation{Estonian}{danger}{oht}
+\selectlanguage{Russian} \DeclareTranslation{Russian}{danger}{Опасно!}
+\selectlanguage{Japanese} \DeclareTranslation{Japanese}{danger}{危険}
+
+%Translations for warning
+\DeclareTranslationFallback{warning}{warning}
+\selectlanguage{German} \DeclareTranslation{German}{warning}{Warnung}
+\selectlanguage{English} \DeclareTranslation{English}{warning}{Warning}
+\selectlanguage{French} \DeclareTranslation{French}{warning}{Avertissement}
+\selectlanguage{Italian} \DeclareTranslation{Italian}{warning}{Cautela}
+\selectlanguage{Spanish} \DeclareTranslation{Spanish}{warning}{Aviso}
+\selectlanguage{Danish} \DeclareTranslation{Danish}{warning}{Advarsel}
+\selectlanguage{Finnish} \DeclareTranslation{Finnish}{warning}{Varoitus}
+\selectlanguage{Dutch} \DeclareTranslation{Dutch}{warning}{Waarschuwing}
+\selectlanguage{Portuguese} \DeclareTranslation{Portuguese}{warning}{Aviso}
+\selectlanguage{Swedish} \DeclareTranslation{Swedish}{warning}{Varning}
+\selectlanguage{Polish} \DeclareTranslation{Polish}{warning}{Ostrzeżenie}
+\selectlanguage{Norsk} \DeclareTranslation{Norsk}{warning}{Advarsel}
+\selectlanguage{Romanian} \DeclareTranslation{Romanian}{warning}{Avertizare}
+\selectlanguage{Slovak} \DeclareTranslation{Slovak}{warning}{Varovanie}
+\selectlanguage{Slovenian} \DeclareTranslation{Slovenian}{warning}{Opozorilo}
+\selectlanguage{Hungarian} \DeclareTranslation{Hungarian}{warning}{Figyelmeztetés}
+\selectlanguage{Czech} \DeclareTranslation{Czech}{warning}{Varování}
+\selectlanguage{Estonian} \DeclareTranslation{Estonian}{warning}{Hoiatus}
+\selectlanguage{Russian} \DeclareTranslation{Russian}{warning}{Осторожно!}
+\selectlanguage{Japanese} \DeclareTranslation{Japanese}{warning}{警告}
+
+%Translations for caution
+\DeclareTranslationFallback{caution}{caution}
+\selectlanguage{German} \DeclareTranslation{German}{caution}{Vorsicht}
+\selectlanguage{English} \DeclareTranslation{English}{caution}{Caution}
+\selectlanguage{French}\DeclareTranslation{French}{caution}{Attention}
+\selectlanguage{Italian}\DeclareTranslation{Italian}{caution}{Attenzione}
+\selectlanguage{Spanish}\DeclareTranslation{Spanish}{caution}{Precaución}
+\selectlanguage{Danish}\DeclareTranslation{Danish}{caution}{Forsigtig}
+\selectlanguage{Finnish}\DeclareTranslation{Finnish}{caution}{Varoitus}
+\selectlanguage{Dutch}\DeclareTranslation{Dutch}{caution}{Voorzichtig}
+\selectlanguage{Portuguese}\DeclareTranslation{Portuguese}{caution}{Cuidado}
+\selectlanguage{Swedish}\DeclareTranslation{Swedish}{caution}{Se upp}
+\selectlanguage{Polish}\DeclareTranslation{Polish}{caution}{Uwaga}
+\selectlanguage{Norsk}\DeclareTranslation{Norsk}{caution}{Forsiktig}
+\selectlanguage{Romanian}\DeclareTranslation{Romanian}{caution}{Precauţie}
+\selectlanguage{Slovak}\DeclareTranslation{Slovak}{caution}{Upozornenie}
+\selectlanguage{Slovenian}\DeclareTranslation{Slovenian}{caution}{Pozor}
+\selectlanguage{Hungarian}\DeclareTranslation{Hungarian}{caution}{Vigyázat}
+\selectlanguage{Czech}\DeclareTranslation{Czech}{caution}{Pozor}
+\selectlanguage{Estonian}\DeclareTranslation{Estonian}{caution}{Ettevaatust}
+\selectlanguage{Russian}\DeclareTranslation{Russian}{caution}{Внимание!}
+\selectlanguage{Japanese}\DeclareTranslation{Japanese}{caution}{注意}
+
+
+%Translations for notice
+\DeclareTranslationFallback{notice}{notice}
+\selectlanguage{German} \DeclareTranslation{German}{notice}{Hinweis}
+\selectlanguage{English} \DeclareTranslation{English}{notice}{notice}
+\selectlanguage{French}\DeclareTranslation{French}{notice}{Noter}
+\selectlanguage{Italian}\DeclareTranslation{Italian}{notice}{Nota}
+\selectlanguage{Spanish}\DeclareTranslation{Spanish}{notice}{Nota}
+\selectlanguage{Danish}\DeclareTranslation{Danish}{notice}{Bemærk}
+\selectlanguage{Finnish}\DeclareTranslation{Finnish}{notice}{Merkintä}
+\selectlanguage{Dutch}\DeclareTranslation{Dutch}{notice}{Opmerking}
+\selectlanguage{Portuguese}\DeclareTranslation{Portuguese}{notice}{Observação}
+\selectlanguage{Swedish}\DeclareTranslation{Swedish}{notice}{Notera}
+\selectlanguage{Polish}\DeclareTranslation{Polish}{notice}{Wzmianka}
+\selectlanguage{Norsk}\DeclareTranslation{Norsk}{notice}{Merk}
+\selectlanguage{Romanian}\DeclareTranslation{Romanian}{notice}{Notă}
+\selectlanguage{Slovak}\DeclareTranslation{Slovak}{notice}{Poznámka}
+\selectlanguage{Slovenian}\DeclareTranslation{Slovenian}{notice}{Opomba}
+\selectlanguage{Hungarian}\DeclareTranslation{Hungarian}{notice}{Jegyzet}
+\selectlanguage{Czech}\DeclareTranslation{Czech}{notice}{Poznámka}
+\selectlanguage{Estonian}\DeclareTranslation{Estonian}{notice}{Märge}
+\selectlanguage{Russian}\DeclareTranslation{Russian}{notice}{Примечание}
+\selectlanguage{Japanese}\DeclareTranslation{Japanese}{notice}{注意}
+
+
+%Environment for the danger, warning and caution safety message
+\renewcommand{\arraystretch}{1.3}
+\newenvironment{safetymessage}[3]
+{\begin{center}
+		\begin{spacing}{0.95}
+			\begin{tabular}{|c@{\extracolsep{\fill}}l@{\extracolsep{\fill}}|}
+				\hline
+				\Large\tr & \begin{tabular}[t]{p{0.8\columnwidth}}
+					\IfStrEq{#1}{w}{\warning}
+					{\IfStrEq{#1}{c}{\caution}
+						{\IfStrEq{#1}{d}{\danger}{\PackageError{Safety messages}{Incorrect value of the first argument}{Only values "w", "c" and "d" are allowed.}}}}\\
+					\IfStrEq{#2}{}{}{\textbf{#2}\\}
+					\IfStrEq{#3}{}{}{#3}
+					\begin{itemize} }
+					{\end{itemize} 
+				\end{tabular}
+				\\\hline
+			\end{tabular} 
+		\end{spacing}
+	\end{center}
+}
+
+
+%Inline for the danger, warning and caution safety message
+\newcommand{\safetymessageinline}[2]{\tiny\trin\normalsize \IfStrEq{#1}{w}{\warning}
+	{\IfStrEq{#1}{c}{\caution}
+		{\IfStrEq{#1}{d}{\danger}{\PackageError{Safety messages}{Incorrect value of the first argument}{Only values "w", "c" and "d" are allowed.}}}} #2}
+	
+%Environment for notice message
+
+%Inline for notice message
